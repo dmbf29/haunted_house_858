@@ -1,6 +1,6 @@
-[ ] As a user, I can see one haunted house's monsters
-[ ] As a user, I can add a monster into a haunted house
-[ ] As a user, I can kill a monster
+[x] As a user, I can see one haunted house's monsters
+[x] As a user, I can add a monster into a haunted house
+[x] As a user, I can kill a monster
 
 haunted_houses#show
 monsters#new
