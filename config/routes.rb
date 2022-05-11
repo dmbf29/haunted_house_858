@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :haunted_houses, only: [:show] do
+    resources :monsters, only: [:new, :create]
+  end
+  resources :monsters, only: [:destroy]
 end
+
+# haunted_houses#show
+# monsters#new
+# monsters#create
+# monsters#destroy

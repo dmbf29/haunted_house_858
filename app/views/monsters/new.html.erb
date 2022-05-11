@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Spawn a Monster</h1>
+  <%= simple_form_for [@haunted_house, @monster] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image_url %>
+    <%= f.submit 'Add', class: 'btn btn-danger' %>
+  <% end %>
+</div>
