@@ -4,7 +4,7 @@
     <%= link_to "Add Monster", new_haunted_house_monster_path(@haunted_house), class: 'btn btn-danger mt-2' %>
   </div>
 </div>
-<div class="container mt-3">
+<div class="container mt-3 mb-5">
   <div class="cards">
     <% @haunted_house.monsters.each do |monster| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.image_url %>)">
@@ -12,6 +12,14 @@
         <%= link_to monster_path(monster), class: 'card-remove-link', method: :delete, data: { confirm: "Remove #{monster.name}?" } do %>
           <i class="fas fa-meteor"></i>
         <% end %>
+        <%= link_to new_monster_curse_path(monster), class: 'card-link' do  %>
+          <i class="fas fa-magic"></i>
+        <% end %>
+        <div class="card-tags">
+          <% monster.powers.each do |power| %>
+            <span><%= power.name %></span>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
