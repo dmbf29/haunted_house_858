@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container mt-5">
   <h1>Add Power</h1>
   <%= simple_form_for [@monster, @curse] do |f| %>
     <%= f.association :power, collection: @powers, include_blank: false %>
     <%= f.submit 'Submit', class: 'btn btn-danger' %>
   <% end %>
+  <small><%= link_to 'Back', haunted_house_path(@monster.haunted_house), class: 'btn-light' %></small>
 </div>
