@@ -4,10 +4,12 @@
     <%= link_to "Add Monster", new_haunted_house_monster_path(@haunted_house), class: 'btn btn-danger mt-2' %>
   </div>
 </div>
+<%= cl_image_tag(@haunted_house.monsters.last.photo.key,
+      width: 300, height: 300, crop: :thumb, gravity: :face) %>
 <div class="container mt-3 mb-5">
   <div class="cards">
     <% @haunted_house.monsters.each do |monster| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.image_url %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.photo.attached? ? cl_image_path(monster.photo.key) : monster.image_url %>)">
         <%= monster.name %>
         <%= link_to monster_path(monster), class: 'card-remove-link', method: :delete, data: { confirm: "Remove #{monster.name}?" } do %>
           <i class="fas fa-meteor"></i>
