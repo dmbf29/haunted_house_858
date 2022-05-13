@@ -24,7 +24,7 @@ class MonstersController < ApplicationController
   private
 
   def monster_params
-    params.require(:monster).permit(:name, :image_url)
+    params.require(:monster).permit(:name, :image_url, :photo)
   end
 
   def set_haunted_house
